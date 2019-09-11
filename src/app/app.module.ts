@@ -47,6 +47,8 @@ import {
 
 import { FormPessoaComponent } from './form-pessoa/form-pessoa.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +91,8 @@ import { FormPessoaComponent } from './form-pessoa/form-pessoa.component';
     MatTooltipModule,
     MatBadgeModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

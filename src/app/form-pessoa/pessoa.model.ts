@@ -1,4 +1,4 @@
-export interface Pessoa {
+export interface IPessoa {
   data: {
     pessoa: {
       codigo: string,

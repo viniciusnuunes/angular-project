@@ -1,18 +1,30 @@
-<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px">
-  <mat-form-field appearance="outline" fxFlex="25%" >
-    <mat-label>CPF</mat-label>
-    <input matInput placeholder="Placeholder" (stateChanges)="get(event)">    
-  </mat-form-field>
+<form mat-form [formGroup]="pessoaForm" (ngSubmit)="postPessoa(this)">
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px">      
+    
+      <mat-form-field appearance="outline" fxFlex="25%" >
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" [formControlName]="codigo" (ngModel)="pessoa.data.pessoa.codigo">
+      </mat-form-field>
 
-  <mat-form-field appearance="outline" fxFlex="25%">
-    <mat-label>Nome</mat-label>
-    <input matInput placeholder="Placeholder">    
-  </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="25%" >
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="CPF ou CNPJ" [formControlName]="cpf_cnpj">
+      </mat-form-field>
 
-  <button>Enviar</button>
-</div>
+      <mat-form-field appearance="outline" fxFlex="25%">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome Completo" [formControlName]="nome">    
+      </mat-form-field>  
+      
+    </div>
 
-<div fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="row" fxLayoutAlign="center">
+    <button mat-raised-button color="primary" (click)="pesquisarPessoa(cpf)">Buscar Cliente</button>
+  </div>
+
+</form>
+
+<!-- <div fxLayout="row" fxLayoutAlign="center">
   <mat-card fxFlex="75%" class="mat-elevation-z8">
     <mat-card-header>
       <mat-card-title>Http Get Response</mat-card-title>
@@ -33,4 +45,4 @@
     <mat-card-footer>	
     </mat-card-footer>
   </mat-card>
-</div>
+</div> -->

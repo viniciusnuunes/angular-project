@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Pessoa } from './pessoa.model';
+import { IPessoa } from './pessoa.model';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -21,6 +21,6 @@ export class PessoaService {
   ) { }
     
   getPessoa(cpf_cnpj: string) {
-    return this.http.get<Pessoa>(this.apiUrl + cpf_cnpj, httpOptions);
+    return this.http.get<IPessoa>(this.apiUrl + cpf_cnpj, httpOptions);
   }
 }
