@@ -18,9 +18,10 @@
       <mat-card-title>Http Get Response</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-list *ngIf="pessoaReqObs$ | async as pessoa">
+      <mat-list>
         <mat-list-item *ngFor="let p of pessoa">
-          <p mat-line>{{p.data.pessoa.nome}}</p>          
+          <p mat-line>{{p.codigo}}</p>
+          <p mat-line>{{p.nome}} | {{p.cpf}}</p>
         </mat-list-item>
       </mat-list>
     </mat-card-content>

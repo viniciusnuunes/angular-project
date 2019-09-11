@@ -20,7 +20,7 @@ export class PessoaService {
     private http: HttpClient
   ) { }
   
-  getPessoa(): Observable<Pessoa> {
+  getPessoa() {
     return this.http.get<Pessoa>(this.apiUrl, httpOptions);
   }
 }

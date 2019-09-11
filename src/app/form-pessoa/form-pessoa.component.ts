@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
   templateUrl: './form-pessoa.component.html',
   styleUrls: ['./form-pessoa.component.css']
 })
+
 export class FormPessoaComponent implements OnInit {
 
-  pessoaReqObs$: Observable<Pessoa>;  
+  // pessoaReqObs$: Observable<Pessoa>;
+  pessoa: any = [];
 
   constructor(private pessoaService: PessoaService) { }
 
@@ -19,7 +21,10 @@ export class FormPessoaComponent implements OnInit {
   }
   
   pesquisarPessoa() {
-    this.pessoaReqObs$ = this.pessoaService.getPessoa();
+    this.pessoaService.getPessoa().subscribe(response => {
+      console.log(response);
+      this.pessoa = response.data.pessoa;
+    })
   }
 
 }
