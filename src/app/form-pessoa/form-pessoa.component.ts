@@ -13,15 +13,18 @@ export class FormPessoaComponent implements OnInit {
 
   // pessoaReqObs$: Observable<Pessoa>;
   pessoa: any = [];
+  cpf: string = '11015472788';
 
-  constructor(private pessoaService: PessoaService) { }
+  constructor(
+    private pessoaService: PessoaService,
+  ) { }
 
   ngOnInit() {
     
   }
   
   pesquisarPessoa() {
-    this.pessoaService.getPessoa().subscribe(response => {
+    this.pessoaService.getPessoa(this.cpf).subscribe(response => {
       console.log(response);
       this.pessoa = response.data.pessoa;
     })

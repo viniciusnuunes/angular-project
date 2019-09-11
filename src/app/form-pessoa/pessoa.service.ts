@@ -14,13 +14,13 @@ const httpOptions = {
 })
 export class PessoaService {
   
-  apiUrl = "http://edi.americanpet.com.br:8998/ideia/core/pessoa/11015472788"
+  private apiUrl = "http://edi.americanpet.com.br:8998/ideia/core/pessoa/"
 
   constructor(
     private http: HttpClient
   ) { }
-  
-  getPessoa() {
-    return this.http.get<Pessoa>(this.apiUrl, httpOptions);
+    
+  getPessoa(cpf_cnpj: string) {
+    return this.http.get<Pessoa>(this.apiUrl + cpf_cnpj, httpOptions);
   }
 }
